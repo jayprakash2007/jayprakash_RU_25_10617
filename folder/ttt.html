@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form Validation Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    input {
+      display: block;
+      margin-bottom: 10px;
+      padding: 8px;
+      width: 250px;
+    }
+  </style>
+
+  <script>
+    
+    function validateName() {
+      const name = document.getElementById("name").value;
+      if (name.length < 3) {
+        alert("Name must be at least 3 characters long");
+      }
+    }
+
+    function validateEmail() {
+      const email = document.getElementById("email").value;
+      if (!email.includes("@")) {
+        alert("Please enter a valid email address");
+      }
+    }
+
+
+    function validateForm() {
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      if (name === "" || email === "" || password === "") {
+        alert("All fields are required!");
+        return false;
+      }
+
+      if (password.length < 6) {
+        alert("Password must be at least 6 characters");
+        return false;
+      }
+
+      alert("Form submitted successfully ✅");
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+  <h2>Registration Form</h2>
+
+  <form onsubmit="return validateForm()">
+    <input
+      type="text"
+      id="name"
+      placeholder="Enter your name"
+      oninput="validateName()"
+    >
+
+    <input
+      type="email"
+      id="email"
+      placeholder="Enter your email"
+      oninput="validateEmail()"
+    >
+
+    <input
+      type="password"
+      id="password"
+      placeholder="Enter your password"
+    >
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>

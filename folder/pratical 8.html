@@ -1,0 +1,54 @@
+8 <!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 8</title>
+    <style>
+        /* 1. Universal Selector */
+        * {
+            font-family: Arial, sans-serif;
+        }
+
+        /* 2. Type/Element Selector */
+        h1 {
+            color: navy;
+        }
+
+        /* 3. Class Selector */
+        .highlight {
+            background-color: yellow;
+        }
+
+        /* 4. ID Selector */
+        #main-content {
+            border: 1px solid #ccc;
+            padding: 15px;
+        }
+
+        /* 5. Group Selector */
+        h2, h3 {
+            color: green;
+        }
+        
+        /* 6. Descendant Selector */
+        #main-content p {
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>CSS Selectors Demo</h1>
+
+    <div id="main-content">
+        <h2>This is an h2 inside the 'main-content' div.</h2>
+        <p>This paragraph is styled by the descendant selector (#main-content p).</p>
+        <p>This paragraph is also styled. It has a <span class="highlight">highlighted</span> 
+        word, which is styled by the class selector.</p>
+    </div>
+
+    <h3>This is an h3 outside the div.</h3>
+    <p>This paragraph is <span class="highlight">NOT</span> styled by the descendant 
+    selector, but the highlight class still works.</p>
+
+</body>
+</html>

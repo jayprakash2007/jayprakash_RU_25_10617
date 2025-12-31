@@ -1,0 +1,82 @@
+9 <!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 9</title>
+    <style>
+        * {
+            box-sizing: border-box; /* Makes layout easier */
+        }
+        
+        body { margin: 0; font-family: sans-serif; }
+
+        .container {
+            display: flex;
+            /* Mobile-first: stack items in a column */
+            flex-direction: column;
+        }
+        
+        header, footer {
+            background: #333;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        main {
+            background: #f4f4f4;
+            padding: 15px;
+            /* On mobile, takes up 100% of the width */
+        }
+
+        aside {
+            background: #ddd;
+            padding: 15px;
+            /* On mobile, takes up 100% of the width */
+        }
+        
+        /* Media Query for larger screens (tablets and desktops) */
+        /* This applies only if the screen is 768px or wider */
+        @media (min-width: 768px) {
+            .container {
+                /* On larger screens, arrange in a row */
+                flex-direction: row;
+            }
+            
+            main {
+                flex: 3; /* Main content takes 3/4 of the space */
+            }
+            
+            aside {
+                flex: 1; /* Sidebar takes 1/4 of the space */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Responsive Page</h1>
+    </header>
+
+    <div class="container">
+        <main>
+            <h2>Main Content</h2>
+            <p>On a mobile screen, this and the sidebar will stack vertically. 
+            On a wider screen (over 768px), this main content will be on the 
+            left, and the sidebar will be on the right.</p>
+            <p>Resize your browser to see the effect.</p>
+        </main>
+        
+        <aside>
+            <h3>Sidebar</h3>
+            <p>This is the sidebar content.</p>
+        </aside>
+    </div>
+    
+    <footer>
+        <p>&copy; 2025</p>
+    </footer>
+
+</body>
+</html>

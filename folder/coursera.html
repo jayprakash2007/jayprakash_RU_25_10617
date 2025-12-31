@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="coursera.css">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">
+            <img src="download.jpg" alt="Home" class="home-icon"> <span class="my-name">Jayprakash</span> </div>
+
+        <ul class="nav-links">
+            <li><a href="home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Project Details</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#recommendations">Recommendations</a></li>
+        </ul>
+    </nav>
+
+    <section id="about" class="section-container">
+        <h2>About Me</h2>
+        <div class="profile-container">
+            <img src="bhadwa.jpeg" alt="Profile Picture" class="profile-img">
+            <p class="bio-text">
+                Hi, I am a passionate developer starting my journey in web development. 
+                I love solving problems and building interactive web pages. 
+                </p>
+        </div>
+    </section>
+
+    <section id="skills" class="section-container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="JS Logo">
+                <p>JavaScript</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="HTML Logo">
+                <p>HTML5</p>
+            </div>
+            <div class="skill-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/CSS3_logo_and_wordmark.svg" alt="CSS Logo">
+                <p>CSS3</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section-container">
+        <h2>Project Details</h2>
+        <div class="project-list">
+            <div class="project-card">
+                <h3>Weather Dashboard</h3>
+                <p>A web app that displays current weather data using an API.</p>
+            </div>
+            <div class="project-card">
+                <h3>Task Manager</h3>
+                <p>A clean To-Do list application to manage daily productivity.</p>
+            </div>
+            <div class="project-card">
+                <h3>Recipe Finder</h3>
+                <p>Search for recipes based on ingredients you have at home.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="recommendations" class="section-container">
+        <h2>Recommendations</h2>
+        <div id="rec-list">
+            <div class="recommendation-card">
+                <p>"Jayprakash is a quick learner and great team player!" - Colleague A</p>
+            </div>
+            <div class="recommendation-card">
+                <p>"Always delivers projects on time with clean code." - Professor B</p>
+            </div>
+            <div class="recommendation-card">
+                <p>"Very creative with frontend designs." - Mentor C</p>
+            </div>
+        </div>
+
+        <div class="form-container">
+            <h3>Leave a Recommendation</h3>
+            <textarea id="new-rec-text" placeholder="Write your message here..."></textarea>
+            <input type="text" id="rec-author" placeholder="Your Name">
+            <button onclick="addRecommendation()">Submit</button>
+        </div>
+    </section>
+
+    <script src="coursera.js"></script>
+</body>
+</html>

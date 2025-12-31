@@ -1,0 +1,48 @@
+10 <!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 10</title>
+    <style>
+        /* 1. Styling a DIV */
+        .card {
+            /* 'div' is a block-level element */
+            background-color: #f4f4f4;
+            border: 1px solid #ccc;
+            padding: 20px;
+            margin: 20px 0;
+            /* It starts on a new line and takes up the full width */
+        }
+        
+        /* 2. Styling a SPAN */
+        .highlight {
+            /* 'span' is an inline element */
+            color: #d9534f;
+            font-weight: bold;
+            /* It stays within the line of text */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Div and Span</h1>
+
+    <div class="card">
+        <h2>This is a 'div'</h2>
+        <p>A div is a block-level container. We use it to group this 
+        heading and paragraph into one "card" with a border and background.</p>
+    </div>
+
+    <div class="card">
+        <h2>This is another 'div'</h2>
+        <p>It starts on its own new line.</p>
+    </div>
+    
+    <p>
+        A span is an inline element. We use it to style 
+        <span class="highlight">just a few words</span> inside a 
+        paragraph without starting a new line. It just wraps 
+        <span class="highlight">the text that is inside it</span>.
+    </p>
+
+</body>
+</html>

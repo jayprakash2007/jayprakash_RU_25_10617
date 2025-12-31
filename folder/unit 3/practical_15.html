@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Manipulation Demo</title>
+</head>
+<body>
+  <h1 id="title">Original Title</h1>
+  <p class="description">This is the original description.</p>
+  <div id="output"></div>
+
+  <button onclick="updateContent()">Click Me</button>
+
+  <script>
+    function updateContent() {
+      
+      const titleElement = document.getElementById("title");
+      titleElement.innerHTML = "Updated Title using getElementById()";
+
+      
+      const descriptionElement = document.querySelector(".description");
+      descriptionElement.innerHTML = "Updated description using querySelector()";
+
+      
+      const outputElement = document.getElementById("output");
+      outputElement.innerHTML = `
+        <ul>
+          <li>Item 1 added dynamically</li>
+          <li>Item 2 added dynamically</li>
+          <li>Item 3 added dynamically</li>
+        </ul>
+      `;
+    }
+  </script>
+</body>
+</html>

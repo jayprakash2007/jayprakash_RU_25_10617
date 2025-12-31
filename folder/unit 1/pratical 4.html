@@ -1,0 +1,73 @@
+4 <!DOCTYPE html>
+<html>
+<head>
+    <title>Practical 4</title>
+    <style>
+        body { font-family: sans-serif; }
+        fieldset { margin-bottom: 20px; border: 1px solid #ccc; }
+        legend { font-weight: bold; }
+        div { margin: 10px 0; }
+        label { display: inline-block; width: 120px; }
+    </style>
+</head>
+<body>
+
+    <h1>Event Registration Form</h1>
+
+    <form action="/submit" method="post">
+        
+        <fieldset>
+            <legend>Your Details</legend>
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="user_name">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="user_email">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Event Preferences</legend>
+            
+            <div>
+                <p>Will you attend the dinner?</p>
+                <input type="radio" id="dinner_yes" name="dinner" value="yes">
+                <label for="dinner_yes">Yes</label>
+                <br>
+                <input type="radio" id="dinner_no" name="dinner" value="no">
+                <label for="dinner_no">No</label>
+            </div>
+
+            <div>
+                <p>Which workshops will you attend?</p>
+                <input type="checkbox" id="workshop_a" name="workshops" value="a">
+                <label for="workshop_a">Workshop A (HTML)</label>
+                <br>
+                <input type="checkbox" id="workshop_b" name="workshops" value="b">
+                <label for="workshop_b">Workshop B (CSS)</label>
+                <br>
+                <input type="checkbox" id="workshop_c" name="workshops" value="c">
+                <label for="workshop_c">Workshop C (JavaScript)</label>
+            </div>
+
+            <div>
+                <label for="tshirt_size">T-Shirt Size:</label>
+                <select id="tshirt_size" name="shirt_size">
+                    <option value="">--Select a size--</option>
+                    <option value="s">Small</option>
+                    <option value="m">Medium</option>
+                    <option value="l">Large</option>
+                </select>
+            </div>
+        </fieldset>
+
+        <div>
+            <input type="submit" value="Register">
+            <input type="reset" value="Clear Form">
+        </div>
+    </form>
+
+</body>
+</html>

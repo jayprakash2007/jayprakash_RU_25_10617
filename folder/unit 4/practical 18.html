@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 18: Create & Manipulate Nodes</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; max-width: 400px; }
+        
+        input { padding: 8px; width: 60%; }
+        button#addBtn { padding: 8px; width: 30%; cursor: pointer; }
+
+        ul { list-style-type: none; padding: 0; }
+
+        li {
+            background: #f4f4f4;
+            margin: 5px 0;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #ddd;
+        }
+
+        .delete-btn {
+            background: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>DOM Manipulation: Shopping List</h2>
+    
+    <div>
+        <input type="text" id="itemInput" placeholder="Enter item (e.g. Milk)">
+        <button id="addBtn">Add Item</button>
+    </div>
+
+    <ul id="shoppingList">
+        </ul>
+
+    <script>
+        const input = document.getElementById('itemInput');
+        const addBtn = document.getElementById('addBtn');
+        const list = document.getElementById('shoppingList');
+
+        addBtn.addEventListener('click', function() {
+            const itemText = input.value;
+
+            // Validation: Ensure input is not empty
+            if (itemText === "") {
+                alert("Please enter an item!");
+                return;
+            }
+
+            // --- 1. CREATE Element (createElement) ---
+            const newItem = document.createElement('li');
+
+            // --- 2. MODIFY Element Content (innerText/innerHTML) ---
+            // We set the text of the li, and add a delete button inside it
+            newItem.innerHTML = `
+                <span>${itemText}</span> 
+                <button class="delete-btn">Delete</button>
+            `;
+
+            // --- 3. APPEND Child (appendChild) ---
+            list.appendChild(newItem);
+
+            // Clear the input box
+            input.value = "";
+
+            // --- 4. REMOVE Child Logic ---
+            // We need to find the specific delete button INSIDE this new item
+            const deleteBtn = newItem.querySelector('.delete-btn');
+            
+            deleteBtn.addEventListener('click', function() {
+                // Remove the list item from the parent list
+                list.removeChild(newItem);
+                // Alternatively, newer syntax: newItem.remove();
+            });
+        });
+    </script>
+</body>
+</html>

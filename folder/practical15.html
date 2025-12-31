@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM Manipulation Demo</title>
+<style>
+  body { font-family: Arial; padding: 20px; }
+  #box { padding: 20px; background: lightgray; margin-top: 10px; }
+</style>
+</head>
+<body>
+
+<h2>DOM Manipulation Demo</h2>
+
+<button onclick="changeText()">Change Text</button>
+<button onclick="changeColor()">Change Color</button>
+<button onclick="addMessage()">Add Message</button>
+
+<div id="box">Original content inside the box.</div>
+
+<script>
+  
+  function changeText() {
+    const box = document.getElementById("box");
+    box.innerHTML = "The text has been changed using <b>getElementById()</b>!";
+  }
+   function changeColor() {
+    const box = document.querySelector("#box");
+    box.style.backgroundColor = "lightblue";
+  }
+  function addMessage() {
+    const box = document.getElementById("box");
+    box.innerHTML += "<br><i>New message added using innerHTML!</i>";
+  }
+</script>
+</body>
+</html>
